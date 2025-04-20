@@ -4,6 +4,7 @@
 	"author": "Gabriel Lima Ferreira",
 	"description": "A Node.js project for freeCodeCamp backend certification challenges.",
 	"keywords": ["freecodecamp", "nodejs", "express", "backend", "api"],
+	"license": "MIT",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
