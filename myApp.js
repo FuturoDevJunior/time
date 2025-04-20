@@ -32,11 +32,9 @@ app.get('/json', function(req, res) {
 
 app.get('/now', function(req, res, next) {
   req.time = new Date().toString();
-  console.log('[ROUTE] GET /now - Middleware: req.time set to', req.time);
   next();
 }, function(req, res) {
   res.json({ time: req.time });
-  console.log('[ROUTE] GET /now - Resposta enviada:', { time: req.time });
 });
 
 // Middleware de tratamento de erro
