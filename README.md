@@ -49,3 +49,4 @@ O workflow `.github/workflows/deploy-render.yml` dispara o deploy automático no
 ---
 
 > Projeto mantido para fins educacionais e de certificação FreeCodeCamp.
+// trigger redeploy
