@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"author": "Gabriel Lima Ferreira",
 	"description": "A Node.js project for freeCodeCamp backend certification challenges.",
+	"keywords": ["freecodecamp", "nodejs", "express", "backend", "api"],
 	"dependencies": {
 		"express": "^4.14.0"
 	},
