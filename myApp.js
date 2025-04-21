@@ -28,6 +28,14 @@ app.get('/now', function(req, res, next) {
   res.json({ time: req.time });
 });
 
+// Endpoint de teste para FCC
+app.get('/_api/chain-middleware-time', function(req, res, next) {
+  req.time = new Date().toString();
+  next();
+}, function(req, res) {
+  res.json({ time: req.time });
+});
+
 app.use(function(err, req, res, next) {
   res.status(500).json({ error: 'Erro interno do servidor', details: err.message });
 });
