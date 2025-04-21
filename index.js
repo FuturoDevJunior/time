@@ -24,7 +24,20 @@ app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
 
+// Rota para retornar informações do header do cliente
+app.get('/api/whoami', function (req, res) {
+  const ipaddress = req.headers['x-forwarded-for']?.split(',')[0] || req.connection.remoteAddress || req.ip;
+  const language = req.headers['accept-language'];
+  const software = req.headers['user-agent'];
+
+  res.json({
+    ipaddress,
+    language,
+    software
+  });
+});
+
 // listen for requests :)
-var listener = app.listen(process.env.PORT || 3000, function () {
+var listener = app.listen(process.env.PORT || 3000, '0.0.0.0', function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
