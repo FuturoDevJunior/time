@@ -23,8 +23,10 @@ app.get('/json', function(req, res) {
 
 app.get('/now', function(req, res, next) {
   req.time = new Date().toString();
+  console.log(`[MIDDLEWARE /now] req.time set to: ${req.time}`);
   next();
 }, function(req, res) {
+  console.log(`[HANDLER /now] Responding with:`, { time: req.time });
   res.json({ time: req.time });
 });
 
@@ -34,6 +36,12 @@ app.get('/_api/chain-middleware-time', function(req, res, next) {
   next();
 }, function(req, res) {
   res.json({ time: req.time });
+});
+
+// Endpoint de health check
+app.get('/health', function(req, res) {
+  const now = new Date().toISOString();
+  res.json({ status: 'ok', deployedAt: now, message: 'Health check endpoint' });
 });
 
 app.use(function(err, req, res, next) {
