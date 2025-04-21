@@ -1,3 +1,4 @@
+// Trigger redeploy - ajuste mínimo para forçar novo build
 require('dotenv').config();
 let express = require('express');
 let app = express();
